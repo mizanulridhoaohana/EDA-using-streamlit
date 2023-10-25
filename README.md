@@ -2,7 +2,7 @@
 
 ## Project Exploratory Data Analytics
 
-<img src="https://assets.stickpng.com/images/5848152fcef1014c0b5e4967.png" alt="Python"></img>
+<img src="https://github.com/mizanulridhoaohana/EDA-using-streamlit/assets/112617513/551b172e-44e2-4481-8a91-3367f35ed7a9" alt="Python" width="55" height="45"></img>
 <img src="https://user-images.githubusercontent.com/7164864/217935870-c0bc60a3-6fc0-4047-b011-7b4c59488c91.png" alt="Streamlit logo"></img>
 
 ## Deskripsi
