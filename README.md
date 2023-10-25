@@ -2,7 +2,8 @@
 
 ## Project Exploratory Data Analytics
 
-Pada proyek ini, deployment akan menggunakan platform **Streamlit** <img src="https://user-images.githubusercontent.com/7164864/217935870-c0bc60a3-6fc0-4047-b011-7b4c59488c91.png" alt="Streamlit logo"></img>
+<img src="https://assets.stickpng.com/images/5848152fcef1014c0b5e4967.png" alt="Python"></img>
+<img src="https://user-images.githubusercontent.com/7164864/217935870-c0bc60a3-6fc0-4047-b011-7b4c59488c91.png" alt="Streamlit logo"></img>
 
 ## Deskripsi
 
