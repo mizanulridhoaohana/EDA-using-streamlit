@@ -10,6 +10,7 @@ from plotly.subplots import make_subplots
 
 # Judul dashboard
 st.title("Exploratory Data Analytics")
+st.write("Exploratory Data Analysis (EDA) merupakan tahap eksplorasi data yang telah dibersihkan guna memperoleh insight dan menjawab pertanyaan analisis.")
 
 # Sidebar
 st.sidebar.header("Pengaturan")
@@ -39,8 +40,6 @@ chart_type = st.sidebar.selectbox("Pilih Jenis Visualisasi", ["Pilih Kategori","
                                                               "Casual Rental by Hour and Season","Casual Rental per Holiday",
                                                               "Casual Rental per Work Day"])
 
-chart_comparation = st.sidebar.selectbox("Komparasi penggunan Casual vs Registered User", 
-                                         ["Temperature","Humidity"])
 # Preprocessing
 hour_df = copy.copy(df)
 
@@ -61,8 +60,8 @@ hour_df['late_evening'] = np.where(hour_df['hour'].between(21, 23, inclusive='ri
 
 
 # Visualisasi
-st.subheader("Visualisasi Data")
 if chart_type == "Correlation":
+    st.subheader("Visualisasi Data")
     st.write("Analisis Korelasi")
     
     df_2=df.drop(['weekday'], axis=1)
@@ -73,6 +72,7 @@ if chart_type == "Correlation":
     st.write("Korelasi terkuat dengan pengguna kasual adalah suhu, diikuti oleh fitur-fitur per jam. Kelembaban dan hari kerja adalah fitur-fitur yang paling berkorelasi negatif dengan pengguna kasual, yang mengindikasikan bahwa peningkatan kelembaban akan berdampak buruk pada penyewaan sepeda oleh pengguna kasual. Dan itu wajar. \n\n Korelasi terkuat dengan pengguna terdaftar juga serupa, tetapi dengan variabel per jam yang sedikit lebih tinggi dibandingkan dengan suhu. Hari kerja memiliki korelasi yang lebih tinggi dengan pengguna terdaftar, mungkin karena berbagi perjalanan selama berkomute. Kelembaban tidak memiliki korelasi negatif yang begitu kuat dengan pengguna terdaftar, yang mungkin merupakan indikasi lain bahwa pengguna terdaftar menggunakan sepeda selama berkomute. \n\n Ada korelasi yang kuat dan jelas antara pengguna terdaftar dan jumlah penyewaan, tetapi yang saya ingin lakukan di sini adalah melihat kondisi terbaik untuk penggunaan kasual. Jika pengguna kasual dapat diubah menjadi pengguna terdaftar, itu akan menjadi hal yang baik. Meskipun pengguna kasual mungkin lebih suka menyewa sepeda secara santai (seperti penggunaan akhir pekan), akan menarik untuk melihat perbedaan-perbedaan yang ada.")
 
 elif chart_type == "Casual Rental per Season":
+    st.subheader("Visualisasi Data")
     st.write("Berikut adalah data untuk Casual Rental per Season")
 
     # Data
@@ -109,6 +109,7 @@ elif chart_type == "Casual Rental per Season":
     st.write("Dengan jumlah total penggunaan baik pengguna terdaftar maupun pengguna kasual divisualisasikan, kita dapat melihat bahwa penggunaan terdaftar lebih tinggi jika dibandingkan dengan penggunaan kasual pada bulan-bulan yang lebih dingin, yang mulai meningkat pada musim 3 dan 4. Musim 2 mengalami peningkatan sekitar 20% dalam penggunaan kasual dibandingkan dengan penggunaan terdaftar untuk musim yang sama.")
 
 elif chart_type == "Casual Rental by Season and Year":
+    st.subheader("Visualisasi Data")
     st.write("Berikut adalah data untuk Casual Rental by Season and Year")
 
     df_casual_avg = hour_df.groupby(['season', 'year']).agg({'casual': 'mean'}).reset_index()
@@ -139,6 +140,7 @@ elif chart_type == "Casual Rental by Season and Year":
     st.write("Data hasil dari pengguna kasual yang dikelompokkan berdasarkan musim dan tahun. Seperti yang disebutkan sebelumnya, kita melihat bahwa musim ketiga pada tahun pertama memiliki nilai total maksimum dan rata-rata tertinggi, diikuti oleh musim kedua juga pada tahun pertama.")
 
 elif chart_type == "Casual Rental per Month":
+    st.subheader("Visualisasi Data")
     st.write("Berikut adalah data untuk Casual rentals per month")
 
     # Data
@@ -175,6 +177,7 @@ elif chart_type == "Casual Rental per Month":
     st.write("Berdasarkan grafik di atas, angka penyewaan kasual terbesar terjadi pada musim ke-3 dan ke-2, dengan bulan Juli, Mei, Juni, Agustus, September, dan April memiliki jumlah penyewaan kasual terbanyak dalam urutan tersebut.")
 
 elif chart_type == "Casual Rental by Hour and Season":
+    st.subheader("Visualisasi Data")
     st.write("Berikut adalah data untuk Casual Rental by Hour and Season")
 
     df_casual_hour_season = hour_df.groupby(['hour', 'season']).agg({'casual': 'sum'}).reset_index()
@@ -206,6 +209,7 @@ elif chart_type == "Casual Rental by Hour and Season":
     st.write("Jam 10 pagi hingga 8 malam tampaknya menjadi rentang waktu yang paling umum untuk penyewaan kasual sepanjang musim, dengan peningkatan penggunaan yang sedikit pada pukul 17.00 di musim semi dan musim panas. Kami melihat penurunan yang cukup tajam dalam penggunaan kasual setelah pukul 17.00 di musim dingin, serta beberapa penggunaan tambahan sekitar pukul 19.00 di musim panas.")
 
 elif chart_type == "Casual Rental per Holiday":
+    st.subheader("Visualisasi Data")
     st.write("Berikut adalah data untuk Casual Rental per Holiday")    
 
     df_holiday_casual = hour_df.groupby(['holiday']).agg({'casual': 'sum'}).reset_index()
@@ -222,6 +226,7 @@ elif chart_type == "Casual Rental per Holiday":
     st.write("Dari grafik di atas, dapat diketahui bahwa penyewaan kasual tidak terlalu populer selama liburan, dengan hanya 3,61% dari total penggunaan kasual terjadi pada hari-hari libur ini.")
 
 elif chart_type == "Casual Rental per Work Day":
+    st.subheader("Visualisasi Data")
     st.write("Berikut adalah data untuk Casual Rental per Work Day")    
 
     df_workday_casual = hour_df.groupby(['work_day']).agg({'casual': 'sum'}).reset_index()
@@ -241,9 +246,16 @@ else:
     print("")
 
 
+
+
+st.sidebar.header("Komparasi")
+chart_comparation = st.sidebar.selectbox("Komparasi penggunan Casual vs Registered User", 
+                                         ["Pilih Kategori","Temperature","Humidity"])
+
+
 if(chart_comparation == 'Temperature'):
-    import plotly.graph_objects as go
-    st.write("Berikut adalah data comparasi dari Casual vs. Registered rentals per temperature value")
+    st.subheader("Komparasi Data Pengguna Casual vs Register")
+    st.write("Berikut adalah data komparasi dari Casual vs. Registered rentals per temperature value")
 
     # Data
     df_casual_reg_wind = hour_df.groupby(['temp']).agg({'casual': 'sum', 'registered': 'sum'}).reset_index()
@@ -271,7 +283,8 @@ if(chart_comparation == 'Temperature'):
     st.write("Dan inilah gambaran yang lebih jelas, dengan hanya 12% dari total 86 ribu pengguna terdaftar (berwarna biru) merupakan penggunaan kasual pada skala suhu yang lebih rendah, yang mungkin mencerminkan bahwa pengguna terdaftar lebih cenderung menyewa sepeda selama bulan-bulan musim dingin. Penyewaan pada suhu ambient di atas 0,5 mengikuti tren yang hampir identik")
 
 elif chart_comparation == 'Humidity':
-
+    st.subheader("Komparasi Data Pengguna Casual vs Register")
+    st.write('Berikut adalah tampilan data untuk komparasi berdasarkan Humidity:')
     df_casual_reg_humid = hour_df.groupby(['humidity']).agg({'casual': 'sum', 'registered': 'sum'}).reset_index()
     df_casual_reg_humid.rename(columns={'casual': 'casual_sum', 'registered': 'registered_sum'}, inplace=True)
     df_casual_reg_humid
