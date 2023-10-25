@@ -19,7 +19,7 @@ st.sidebar.header("Pengaturan")
 # uploaded_file = st.sidebar.file_uploader("Unggah File CSV", type=["csv"])
 
 # Dataframe untuk menampilkan data
-df = pd.read_csv('./dataset_normalization.csv')
+df = pd.read_csv('./dashboard/dataset_normalization.csv')
 
 # Tampilkan dataset
 st.sidebar.header("Dataset")
