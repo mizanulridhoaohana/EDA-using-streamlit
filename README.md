@@ -1,30 +1,28 @@
 # EDA-using-streamlit
 
-# Submission Dicoding "Belajar Data Analytics dengan Python"
+## Project Exploratory Data Analytics
 
-## Project Data Analytics
-
-Repository ini berisi proyek data analytics yang saya kerjakan. Deployment menggunakan **Streamlit** <img src="https://user-images.githubusercontent.com/7164864/217935870-c0bc60a3-6fc0-4047-b011-7b4c59488c91.png" alt="Streamlit logo"></img>
+Pada proyek ini, deployment akan menggunakan platform **Streamlit** <img src="https://user-images.githubusercontent.com/7164864/217935870-c0bc60a3-6fc0-4047-b011-7b4c59488c91.png" alt="Streamlit logo"></img>
 
 ## Deskripsi
 
-Proyek ini bertujuan untuk menganalisis data menggunakan Bike Sharing Dataset. Tujuan akhirnya adalah untuk menghasilkan wawasan dan informasi yang berguna dari data yang dianalisis.
+Proyek ini bertujuan untuk menganalisis data Bike Sharing Dataset. Output yang diharapkan adalah menghasilkan wawasan dan informasi yang berguna dari data yang dianalisis.
 
 ## Struktur Direktori
 
 - **/dataset**: Direktori ini berisi data yang digunakan dalam proyek, dalam format .csv .
-- **/streamlit**: Direktori ini berisi main.py yang digunakan untuk membuat dashboard hasil analisis data.
-- **Proyek_Analisis_Data.ipynb**: File ini yang digunakan untuk melakukan analisis data.
+- **/dashboard**: Direktori ini berisi main.py yang digunakan untuk membuat dashboard hasil analisis data.
+- **EDA_Bike_Sharing.ipynb**: File ini yang digunakan untuk melakukan analisis data.
 
 ## Instalasi
 
-1. Clone repository ini ke komputer lokal Anda menggunakan perintah berikut:
+1. Clone repository berikut ke komputer Anda menggunakan perintah:
 
    ```shell
-   git clone https://github.com/Hanifanta/Project-data-analytics.git
+   git clone https://github.com/mizanulridhoaohana/EDA-using-streamlit.git
    ```
 
-2. Pastikan Anda memiliki lingkungan Python yang sesuai dan pustaka-pustaka yang diperlukan. Anda dapat menginstal pustaka-pustaka tersebut dengan menjalankan perintah berikut:
+2. Install pustaka-pustaka yang dibutuhkan dengan menjalankan perintah berikut:
 
     ```shell
     pip install streamlit
@@ -35,10 +33,7 @@ Proyek ini bertujuan untuk menganalisis data menggunakan Bike Sharing Dataset. T
 1. Masuk ke direktori proyek (Local):
 
     ```shell
-    cd Project-data-analytics/streamlit/
+    cd EDA-using-streamlit/dashboard/
     streamlit run main.py
     ```
     Atau bisa dengan kunjungi website ini [Project Data Analytics](https://eda-visualization-dicoding.streamlit.app/)
-
-## Kontribusi
-Anda dapat berkontribusi pada proyek ini dengan melakukan pull request. Pastikan untuk menjelaskan perubahan yang Anda usulkan secara jelas dan menyeluruh.
